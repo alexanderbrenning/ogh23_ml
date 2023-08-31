@@ -157,6 +157,23 @@ plot(imp)
 par(mfrow = c(1,1))
 varImpPlot(fit, type = 1)
 
+
+# Calculate SHAP feature importance from Shapley values:
+# This is very SLOW and not parallelized!
+extract_shapleys <- function(x) 
+  Shapley$new(predictor, 
+              x.interest = predictors[x,],
+              sample.size = 10 # use default of 100! -> slower
+             )$results$phi
+shaps <- sapply(1:nrow(d), extract_shapleys)
+shap <- apply(abs(shaps), 1, mean)
+# average over all four classes:
+shap <- tapply(shap, rep(predvars, 4), mean)
+barplot(shap[order(shap)], horiz = TRUE, las = 1, xlab = "SHAP feature importance")
+
+
+
+
 # Interaction strength using iml package:
 interac <- iml::Interaction$new(predictor)
 plot(interac)

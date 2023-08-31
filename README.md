@@ -2,6 +2,8 @@
 
 This repo contains the lecture slides, R code and data related to my contribution to the [OpenGeoHub 2023 summer school](https://opengeohub.org/summer-school/opengeohub-summer-school-poznan-2023/) in Poznan.
 
+These materials are also part of a course on geospatial machine learning (GEO408B) that I teach in the Master's program in [Geographic Information Science](https://www.uni-jena.de/msc-geoinformatik) (*Geoinformatik*) at Friedrich Schiller University Jena.
+
 ### Useful Links and References
 
 - Brenning, A. (2023). [Interpreting machine-learning models in transformed feature space with an application to remote-sensing classification](https://doi.org/10.1007/s10994-023-06327-8). *Machine Learning*, 112, 3455--3471.
